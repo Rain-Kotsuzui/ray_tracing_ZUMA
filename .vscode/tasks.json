@@ -1,0 +1,101 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mkdir", 
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}" 
+            },
+            "command": "mkdir", //命令
+            "args": [
+                "build"
+            ]
+        },
+        {
+            "label": "qmake-debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build" 
+            },
+            "command": "qmake",
+            "args": [
+                "../${workspaceFolderBasename}.pro", 
+                "\"CONFIG+=qtquickcompiler\"", //编译优化
+                "\"CONFIG+=debug\""
+            ],
+            "dependsOn": [ 
+            ]
+        },
+
+        {
+            "label": "make-debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "command": "make",
+            "args": [
+                "-f",
+                "Makefile", 
+                "-j" //并行编译
+            ],
+            "dependsOn": [
+                "qmake-debug"
+            ]
+        },
+
+        {
+            "label": "qmake-release",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build" 
+            },
+            "command": "qmake", 
+            "args": [
+                "../${workspaceFolderBasename}.pro", 
+                "\"CONFIG+=qtquickcompiler\"", //编译优化
+            ],
+            "dependsOn": [ 
+            ]
+        },
+        {
+            "label": "make-release",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "command": "make",
+            "args": [
+                "-f",
+                "Makefile", 
+                "-j" //并行编译
+            ],
+            "dependsOn": [
+                "qmake-release"
+            ]
+        },
+        {
+            "label": "run-release",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/build" 
+            },
+            "command": "${workspaceFolder}/build/release/${workspaceFolderBasename}.exe", // for windows
+            "dependsOn": [
+                "make-release"
+            ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "command": "make",
+            "args": [
+                "clean"
+            ]
+        }
+    ]
+}
