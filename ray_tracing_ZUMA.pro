@@ -1,5 +1,7 @@
 QT += core gui widgets opengl openglwidgets
 CONFIG += c++17
+QMAKE_CXXFLAGS += -O3
+QMAKE_CFLAGS += -O3
 
 SOURCES += \
     src/main.cpp \
