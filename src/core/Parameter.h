@@ -38,7 +38,7 @@ static constexpr float GROUND_LIGHT = 0;         // 地面光照
 static constexpr float GROUND_SMOOTH = 0.2;      // 地面光滑度
 static constexpr float GROUND_GLASS = 0;         // 地面着色度
 
-static bool SET_GROUND = true;        // 是否设置地面
+static bool SET_GROUND = false;        // 是否设置地面
 static bool LIGHTING = true;
 static bool DRAWPATH = true;
 
@@ -62,8 +62,8 @@ static const QVector<Material> MATERIAL = {
     Material(0, 1, 0, COLORS[0]),
     Material(20, 1, 0.5, COLORS[1]),
     Material(20, 1, 0.2, COLORS[2]),
-    Material(0, 0.6, 0, COLORS[3]),
-    Material(-0.01, 0.3, 0, COLORS[4]),
+    Material(0, 1, 0, COLORS[3]),
+    Material(-0.01, 1, 0, COLORS[4]),
     Material(2, 1, 1, COLORS[5]),
-    Material(0, 0.2, 0.2, COLORS[6]),
+    Material(0, 1, 0.2, COLORS[6]),
 };

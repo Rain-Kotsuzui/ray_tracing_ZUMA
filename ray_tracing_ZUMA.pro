@@ -1,9 +1,5 @@
 QT += core gui widgets opengl openglwidgets
 CONFIG += c++17
-CONFIG += gcov
-
-QMAKE_CXXFLAGS += -fprofile-instr-generate
-QMAKE_CXXFLAGS += -fcoverage-mapping
 
 SOURCES += \
     src/main.cpp \

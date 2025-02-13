@@ -1,0 +1,15 @@
+debug/main.o
+debug/Camera.o
+debug/GameWidget.o
+debug/MainWindow.o
+debug/Ray.o
+debug/Game.o
+debug/Ball.o
+debug/Material.o
+debug/Path.o
+debug/CollisionSystem.o
+debug/Shooter.o
+debug/qrc_image.o
+debug/moc_GameWidget.o
+debug/moc_MainWindow.o
+debug/moc_Game.o

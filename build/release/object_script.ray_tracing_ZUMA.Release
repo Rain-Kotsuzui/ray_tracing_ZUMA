@@ -1,0 +1,15 @@
+release/main.o
+release/Camera.o
+release/GameWidget.o
+release/MainWindow.o
+release/Ray.o
+release/Game.o
+release/Ball.o
+release/Material.o
+release/Path.o
+release/CollisionSystem.o
+release/Shooter.o
+release/qrc_image.o
+release/moc_GameWidget.o
+release/moc_MainWindow.o
+release/moc_Game.o
